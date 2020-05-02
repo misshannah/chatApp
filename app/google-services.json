@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "9812908532",
+    "firebase_url": "https://gdg-chat-app-640ad.firebaseio.com",
+    "project_id": "gdg-chat-app-640ad",
+    "storage_bucket": "gdg-chat-app-640ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9812908532:android:2983b012108d48cfeb41a1",
+        "android_client_info": {
+          "package_name": "com.topcoder.gdgchatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9812908532-ha815af36bip7f2hku9ifo9inj4ar559.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.topcoder.gdgchatapp",
+            "certificate_hash": "b7166bf7fdd00862de79056b2a4bc5a730947b26"
+          }
+        },
+        {
+          "client_id": "9812908532-j38mqrdo0qfqem3s6laiid1341rscgbm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbvwIDsCEaWVPGiBjZ3meu7AXAj5jO2Hg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9812908532-j38mqrdo0qfqem3s6laiid1341rscgbm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
