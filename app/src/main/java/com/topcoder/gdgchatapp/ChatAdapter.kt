@@ -8,6 +8,8 @@ import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.chat_item.view.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ChatAdapter(val uid: String): RecyclerView.Adapter<ChatAdapter.ChatViewHolder>() {
     private var messages = mutableListOf<Message>()
@@ -24,6 +26,15 @@ class ChatAdapter(val uid: String): RecyclerView.Adapter<ChatAdapter.ChatViewHol
 
     override fun onBindViewHolder(holder: ChatViewHolder, position: Int) {
         holder.itemView.message_tv.text = messages[position].text
+//
+//        val calendar: Calendar = Calendar.getInstance()
+//        val simpleDateFormat = SimpleDateFormat("h:mm a")
+//        val currentTimeStamp = simpleDateFormat.format(calendar.getTime())
+//
+//        holder.itemView.message_timestamp.setText(currentTimeStamp)
+
+        holder.itemView.message_timestamp.text = messages[position].msgTime
+
 
         if(messages[position].senderId == uid){
             val params = FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT)
@@ -43,6 +54,7 @@ class ChatAdapter(val uid: String): RecyclerView.Adapter<ChatAdapter.ChatViewHol
             holder.itemView.message_tv.layoutParams = params
             holder.itemView.message_tv.setPadding(calculateDp(24, holder.itemView),calculateDp(5, holder.itemView),
                 calculateDp(8, holder.itemView),calculateDp(5, holder.itemView))
+
         }
     }
 

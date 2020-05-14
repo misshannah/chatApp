@@ -7,5 +7,5 @@ class Message() {
     var senderId = ""
     var receiverId = ""
     var senderName = ""
-
+    var msgTime = ""
 }

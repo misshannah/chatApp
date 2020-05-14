@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_chat.*
+import kotlinx.android.synthetic.main.chat_item.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class ChatActivity : AppCompatActivity() {
@@ -14,6 +17,7 @@ class ChatActivity : AppCompatActivity() {
     var receiverName: String? = null
     var receiverToken: String? = null
     var userToken: String? = null
+    var msgTime: String? = null
     private lateinit var auth: FirebaseAuth
     lateinit var database: FirebaseDatabase
     private lateinit var adapter: ChatAdapter
@@ -43,6 +47,11 @@ class ChatActivity : AppCompatActivity() {
 
     private fun setSendListener() {
         send_tv.setOnClickListener {
+
+            val calendar: Calendar = Calendar.getInstance()
+            val simpleDateFormat = SimpleDateFormat("h:mm a")
+            val currentTimeStamp = simpleDateFormat.format(calendar.getTime())
+
             chatId?.let {
                 if (message_et.text.isNotEmpty()) {
                     val newRef: DatabaseReference =
@@ -54,6 +63,8 @@ class ChatActivity : AppCompatActivity() {
                         senderId = auth.currentUser?.uid ?: ""
                         senderName = auth.currentUser?.displayName ?: ""
                         senderToken = this@ChatActivity.userToken ?: ""
+                        msgTime = currentTimeStamp ?: ""
+
                     }
                     newRef.setValue(message)
                     message_et.setText("")
